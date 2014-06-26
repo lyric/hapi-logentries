@@ -1,15 +1,21 @@
 # hapi-logentries 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
 
-hapi plugin for logging to to logentries
+Hapi plugin for logging to to logentries
 
+Basically you add your logentries token and app name to the options, and it will start logging to the console and the channel you provide.
+
+It currently has a very narrow focus, but it would be easy to make it do more.
+
+See the example server.js for how to use it.
 
 ## Install
+You will need to point your package.json to this repo, or a fork until it is cleaned up for npm release.
 
+_(Coming soon)_
 ```bash
 $ npm install --save hapi-logentries
 ```
-
 
 ## API
 
@@ -17,9 +23,7 @@ _(Coming soon)_
 
 
 ## Contributing
-
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [gulp](http://gulpjs.com/).
-
+Currently this is very basic for my needs, PRs are welcome
 
 ## Release History
 
@@ -29,7 +33,6 @@ _(Nothing yet)_
 ## License
 
 Copyright (c) 2014 Lyric Hartley. Licensed under the MIT license.
-
 
 
 [npm-url]: https://npmjs.org/package/hapi-logentries
