@@ -10,41 +10,25 @@ var before = Lab.before;
 var after = Lab.after;
 
 describe('hapiLogentries', function() {
-  var server = new Hapi.Server();
-  it('Plugin successfully loads', function(done) {
-    server.pack.require('../', function(err) {
+    var server = new Hapi.Server('localhost', 8800);
 
-      expect(err).to.not.exist;
-
-      done();
-    });
-  });
-
-  it('Plugin registers routes', function(done) {
-    var table = server.table();
-
-    expect(table).to.have.length(1);
-    expect(table[0].path).to.equal('/');
-
-    done();
-  });
-
-  it("Plugin route responses", function(done) {
-    var table = server.table();
-
-    expect(table).to.have.length(1);
-    expect(table[0].path).to.equal("/");
-
-    var request = {
-      method: 'GET',
-      url: '/'
+    var options = {
+        token: '0bfdfa51-4d68-46f3-9157-145eed6e8ad8',
+        appName: "Tix"
     };
 
-    server.inject(request, function(res) {
-      expect(res.statusCode).to.equal(200);
-      expect(res.result).to.equal('don\'t worry, be hapi!');
-      done();
+    it('Plugin successfully loads', function(done) {
+      server.pack.register({
+              plugin: require("../index.js"),
+              options: options
+          }
+          , function(err) {
+              if (err) throw err;
+              server.start(function() {
+                  console.log("Hapi server started @ " + server.info.uri);
+              });
+          });
+        done();
     });
 
-  });
 });
