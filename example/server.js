@@ -27,3 +27,12 @@ server.pack.register({
         console.log("Hapi server started @ " + server.info.uri);
     });
 });
+
+server.route({
+    path: "/log",
+    method: "GET",
+    handler: function(request, reply) {
+        request.log(request.event);
+        reply("Logged request to " + request.path);
+    }
+});
