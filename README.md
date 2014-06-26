@@ -14,7 +14,7 @@ You will need to point your package.json to this repo, or a fork until it is cle
 
 _(Coming soon)_
 ```bash
-$ npm install --save hapi-logentries
+$ npm install --save git://github.com/lyric/hapi-logentries.git
 ```
 
 ## API
