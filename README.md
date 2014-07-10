@@ -24,7 +24,7 @@ var options = {
     };
 
 server.pack.register({
-        plugin: require("../index.js"),
+        plugin: require("hapi-logentries"),
         options: options
     }
     , function(err) {
