@@ -17,10 +17,23 @@ _(Coming soon)_
 $ npm install --save git://github.com/lyric/hapi-logentries.git
 ```
 
-## API
+```javascript
+var options = {
+        token: '000token111',
+        appName: "MyApp"
+    };
 
-_(Coming soon)_
-
+server.pack.register({
+        plugin: require("../index.js"),
+        options: options
+    }
+    , function(err) {
+        if (err) throw err;
+        server.start(function() {
+        console.log("Hapi server started @ " + server.info.uri);
+    });
+});
+```
 
 ## Contributing
 Currently this is very basic for my needs, PRs are welcome
