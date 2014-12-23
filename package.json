@@ -20,7 +20,7 @@
     "logging"
   ],
   "dependencies": {
-    "lout": "5.0.0",
+    "lout": "5.2.0",
     "hoek": "2.3.0",
     "bunyan": "^0.23.1",
     "bunyan-logentries": "^0.1.0"
